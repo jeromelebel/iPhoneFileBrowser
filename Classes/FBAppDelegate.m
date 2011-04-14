@@ -1,15 +1,15 @@
 //
-//  UntitledAppDelegate.m
+//  FBAppDelegate.m
 //  Untitled
 //
 //  Created by Jérôme Lebel on 29/01/09.
 //  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
-#import "UntitledAppDelegate.h"
-#import "FolderController.h"
+#import "FBAppDelegate.h"
+#import "FBFolderController.h"
 
-@implementation UntitledAppDelegate
+@implementation FBAppDelegate
 
 @synthesize window, savedLocation;
 
@@ -25,7 +25,7 @@
     NSArray *pathComponents;
     pathComponents = [savedLocation pathComponents];
     if ([pathComponents count] > 1) {
-        [(FolderController *)navigationController.topViewController restoreLevel:pathComponents withIndex:1];
+        [(FBFolderController *)navigationController.topViewController restoreLevel:pathComponents withIndex:1];
     }
 }
 

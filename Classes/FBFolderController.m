@@ -1,15 +1,15 @@
 //
-//  FolderController.m
+//  FBFolderController.m
 //  Untitled
 //
 //  Created by Jérôme Lebel on 05/02/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "FolderController.h"
-#import "UntitledAppDelegate.h"
+#import "FBFolderController.h"
+#import "FBAppDelegate.h"
 
-@implementation FolderController
+@implementation FBFolderController
 
 + (id)alloc
 {
@@ -47,7 +47,7 @@ static NSMutableDictionary *getFileInfo(NSString *path, NSString *fileName)
     return [result autorelease];
 }
 
-- (id)initWithParentController:(FolderController *)parent fileInfo:(NSDictionary *)info;
+- (id)initWithParentController:(FBFolderController *)parent fileInfo:(NSDictionary *)info;
 {
     self = [self init];
     if (self != NULL) {
@@ -121,7 +121,7 @@ static NSMutableDictionary *getFileInfo(NSString *path, NSString *fileName)
 	NSIndexPath *tableSelection = [(UITableView*)self.view indexPathForSelectedRow];
 	[(UITableView*)self.view deselectRowAtIndexPath:tableSelection animated:NO];
     
-    UntitledAppDelegate *appDelegate = (UntitledAppDelegate *)[[UIApplication sharedApplication] delegate];
+    FBAppDelegate *appDelegate = (FBAppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.savedLocation = [fileInfo objectForKey:@"FullPath"];
 }
 
@@ -148,10 +148,10 @@ static NSMutableDictionary *getFileInfo(NSString *path, NSString *fileName)
 	return cell;
 }
 
-- (FolderController *)nextControllerWithFileInfo:(NSDictionary *)info
+- (FBFolderController *)nextControllerWithFileInfo:(NSDictionary *)info
 {
     if (nextController == nil) {
-        nextController = [[FolderController alloc] initWithParentController:self fileInfo:info];
+        nextController = [[FBFolderController alloc] initWithParentController:self fileInfo:info];
     } else {
         nextController.fileInfo = info;
     }
@@ -178,7 +178,7 @@ static NSMutableDictionary *getFileInfo(NSString *path, NSString *fileName)
     }
     
     if (info) {
-        FolderController *next;
+        FBFolderController *next;
         
         next = [self nextControllerWithFileInfo:info];
 		[[self navigationController] pushViewController:next animated:NO];

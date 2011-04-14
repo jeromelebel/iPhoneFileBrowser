@@ -1,5 +1,5 @@
 //
-//  FolderController.h
+//  FBFolderController.h
 //  Untitled
 //
 //  Created by Jérôme Lebel on 05/02/09.
@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FolderController : UIViewController <UINavigationBarDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface FBFolderController : UIViewController <UINavigationBarDelegate, UITableViewDelegate, UITableViewDataSource>
 {
-    FolderController                *parentController;
-    FolderController                *nextController;
+    FBFolderController              *parentController;
+    FBFolderController              *nextController;
     NSDictionary                    *fileInfo;
     NSMutableArray                  *contents;
 }
