@@ -18,3 +18,4 @@ build/*
 DerivedData/
 xcuserdata/
 .svn
+*~
