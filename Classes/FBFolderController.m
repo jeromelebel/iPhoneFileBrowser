@@ -144,7 +144,7 @@ static NSMutableDictionary *getFileInfo(NSString *path, NSString *fileName)
 	}
 	
 	// get the view controller's info dictionary based on the indexPath's row
-	cell.text = [[contents objectAtIndex:indexPath.row] objectForKey:@"DisplayName"];
+	cell.textLabel.text = [[contents objectAtIndex:indexPath.row] objectForKey:@"DisplayName"];
 	return cell;
 }
 
